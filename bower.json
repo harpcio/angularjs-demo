@@ -1,0 +1,29 @@
+{
+  "name": "harpcio/angularjs-demo",
+  "version": "1.0.0",
+  "authors": [
+    "Rafal Ksiazek <harpcio@gmail.com>"
+  ],
+  "description": "Simple demo of AngularJS",
+  "keywords": [
+    "git",
+    "angular",
+    "bower",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15",
+    "angularLocalStorage": "ngStorage#^0.3.2"
+  }
+}

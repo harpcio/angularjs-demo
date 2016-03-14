@@ -1,0 +1,103 @@
+<div class="page">
+    <div class="header">
+        <div id="stats">
+            <game-stats></game-stats>
+            <a ng-click="vm.showHistory()">Show your scores...</a>
+        </div>
+
+    </div>
+    <div class="gameTable" id="gameTable">
+        <div id="dealerContainer" class="boardRow">
+            <div id="dealerScore" class="score">
+                <div ng-show="!vm.gameState.dealerTurn">
+                    ?
+                </div>
+                <div ng-show="vm.gameState.dealerTurn">
+                    {{ vm.gameState.dealerPoints }}
+                </div>
+            </div>
+            <div ng-show="!vm.gameState.dealerTurn">
+                <div class="card card-{{ vm.gameState.dealerCards[0].id }} card-deck-{{ vm.gameState.dealerCards[0].deck }}"></div>
+                <div class="card blank"></div>
+            </div>
+            <div ng-show="vm.gameState.dealerTurn">
+                <div ng-repeat="card in vm.gameState.dealerCards"
+                     class="card card-{{ card.id }} card-deck-{{ card.deck }}"></div>
+            </div>
+        </div>
+        <div id="playerContainer" class="boardRow">
+            <div id="playerScore" class="score">
+                {{ vm.gameState.playerPoints }}
+            </div>
+
+            <div ng-repeat="card in vm.gameState.playerCards"
+                 class="card card-{{ card.id }} card-deck-{{ card.deck }}">
+            </div>
+        </div>
+        <div ng-if="!vm.gameState.gameIsEnded && !vm.gameState.isFirstGame">
+            <div title="Deal a new card" class="twistbutton button">
+                <input type="submit" value="twist..." ng-click="vm.twist()"/></div>
+            <div title="Stay with your current cards" class="stickbutton button">
+                <input type="submit" value="stick!" ng-click="vm.stick()"/></div>
+        </div>
+    </div>
+    <p class="copy">© 2010 dotDigitalGroup.</p>
+</div>
+
+<div class="mainBar" ng-show="vm.gameState.gameIsEnded || vm.gameState.isFirstGame">
+    <div class="messageBanner">
+        <div class="message">
+            <div ng-if="vm.gameState.playerWon">You won!</div>
+            <div ng-if="vm.gameState.playerLost">You lost!</div>
+            <div ng-if="vm.gameState.playerDrew">You drew!</div>
+            <div ng-if="vm.gameState.isFirstGame">Welcome to Blackjack.</div>
+            <small>Click 'Play' to start...</small>
+        </div>
+        <div class="bannerLinks">
+            <a ng-click="vm.showHistory()">Show your scores...</a>
+            <a ng-click="vm.reset()">Reset this game!</a>
+        </div>
+        <div class="playButton">
+            <input type="image" value="twist..." ng-click="vm.play()" src="/assets/images/play.png" class="playButton"/>
+        </div>
+    </div>
+</div>
+
+<div class="mainBar" ng-show="vm.isHistoryShow">
+    <div class="scoreHistory">
+        <a href="#" ng-click="vm.closeHistory()">close history</a>
+
+        <table>
+            <tbody>
+            <tr class="header">
+                <td>
+                    Game
+                </td>
+                <td>
+                    Player
+                </td>
+                <td>
+                    Dealer
+                </td>
+                <td>
+                    Result
+                </td>
+            </tr>
+            <tr ng-repeat="gameHistory in vm.gamesHistoryList">
+                <td>
+                    {{ gameHistory.game }}
+                </td>
+                <td>
+                    {{ gameHistory.player }}
+                </td>
+                <td>
+                    {{ gameHistory.dealer }}
+                </td>
+                <td>
+                    {{ gameHistory.result }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

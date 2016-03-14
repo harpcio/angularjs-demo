@@ -1,0 +1,276 @@
+﻿div.boardRow {
+    position: absolute;
+    width: 798px;
+    height: 162px;
+    overflow: hidden;
+}
+
+div.winnerRow {
+    background: url(../images/table_highlight.gif) no-repeat left top;
+}
+
+#dealerContainer {
+    left: 32px;
+    top: 51px;
+}
+
+#playerContainer {
+    left: 32px;
+    top: 256px;
+}
+
+div.card {
+    float: left;
+    background: url(../images/cards.png) no-repeat left top;
+    width: 72px;
+    height: 96px;
+    overflow: hidden;
+    margin: 34px 0 0 20px;
+}
+
+div.blank {
+    background: url(../images/back.png) no-repeat left top;
+}
+
+div.score {
+    position: absolute;
+    left: 632px;
+    top: 0;
+    color: White;
+    font-size: 80px;
+    width: 126px;
+    height: 98px;
+    text-align: center;
+    padding: 32px 20px;
+}
+
+div.score span {
+    display: block;
+    font-size: 40px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+div.score span + span {
+    text-align: right;
+}
+
+div.twoscores {
+    background: url(../images/divider.png) no-repeat 32px 30px;
+}
+
+div.bust {
+    font-size: 60px;
+    color: Red;
+    padding-top: 48px;
+}
+
+div.twistbutton {
+    position: absolute;
+    left: 310px;
+    top: 424px;
+}
+
+div.stickbutton {
+    position: absolute;
+    left: 485px;
+    top: 424px;
+}
+
+div.button {
+    width: 161px;
+    height: 49px;
+    background: url(../images/button.png) no-repeat left top;
+    text-align: center;
+    font-size: 30px;
+    color: #2a4836;
+    cursor: pointer;
+}
+
+div.button input {
+    text-align: center;
+    font-size: 30px;
+    color: #2a4836;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 161px;
+    height: 45px;
+}
+
+div.button:hover {
+    background: url(../images/button_hover.png) no-repeat left top;
+}
+
+div.button.button_down {
+    background: url(../images/button_down.png) no-repeat left top !important;
+}
+
+div.button.button_disabled {
+    background: url(../images/button_disabled.png) no-repeat left top !important;
+    cursor: default;
+}
+
+div.messageBanner {
+    width: 798px;
+    margin: 0 auto;
+}
+
+div.message {
+    float: left;
+    color: White;
+    font-size: 40px;
+    margin-top: 14px;
+}
+
+div.message small {
+    display: block;
+    font-size: 20px;
+}
+
+div.playButton {
+    float: right;
+    background: url(../images/play.png) no-repeat left top;
+    width: 152px;
+    height: 81px;
+    cursor: pointer;
+    margin-top: 9px;
+}
+
+div.playButton:hover {
+    background: url(../images/play_hi.png) no-repeat left top;
+}
+
+div.bannerLinks {
+    float: right;
+    color: White;
+    margin-top: 23px;
+}
+
+div.bannerLinks a {
+    text-decoration: underline;
+    font-size: 14px;
+    display: block;
+    padding: 3px 2px;
+    cursor: pointer;
+}
+
+#stats {
+    position: absolute;
+    left: 720px;
+    font-size: 14px;
+    top: 58px;
+}
+
+#stats p {
+    color: White;
+    margin: 0;
+}
+
+#stats p label {
+    width: 60px;
+    display: block;
+    float: left;
+}
+
+#stats a {
+    display: block;
+    font-size: 12px;
+    color: White;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+div.scoreHistory {
+    border: solid 8px #a2afa5;
+    background: white;
+    max-height: 100px;
+    overflow: auto;
+    width: 400px;
+    margin: 0 auto;
+}
+
+div.scoreHistory table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div.scoreHistory td {
+    border: solid 1px #d1d6d2;
+    padding: 1px 3px;
+    font-size: 13px;
+}
+
+div.scoreHistory tr.header td {
+    font-weight: bold;
+}
+
+.card-1 {
+    background-position-x: -1px !important;
+}
+
+.card-2 {
+    background-position-x: -74px !important;
+}
+
+.card-3 {
+    background-position-x: -147px !important;
+}
+
+.card-4 {
+    background-position-x: -220px !important;
+}
+
+.card-5 {
+    background-position-x: -293px !important;
+}
+
+.card-6 {
+    background-position-x: -366px !important;
+}
+
+.card-7 {
+    background-position-x: -439px !important;
+}
+
+.card-8 {
+    background-position-x: -512px !important;
+}
+
+.card-9 {
+    background-position-x: -585px !important;
+}
+
+.card-10 {
+    background-position-x: -658px !important;
+}
+
+.card-11 {
+    background-position-x: -731px !important;
+}
+
+.card-12 {
+    background-position-x: -804px !important;
+}
+
+.card-13 {
+    background-position-x: -877px !important;
+}
+
+.card-deck-1 {
+    background-position-y: -1px !important;
+}
+
+.card-deck-2 {
+    background-position-y: -99px !important;
+}
+
+.card-deck-3 {
+    background-position-y: -197px !important;
+}
+
+.card-deck-4 {
+    background-position-y: -295px !important;
+}
