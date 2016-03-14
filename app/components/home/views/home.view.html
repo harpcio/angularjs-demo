@@ -17,12 +17,15 @@
                 </div>
             </div>
             <div ng-show="!vm.gameState.dealerTurn">
-                <div class="card card-{{ vm.gameState.dealerCards[0].id }} card-deck-{{ vm.gameState.dealerCards[0].deck }}"></div>
+                <div class="card"
+                     style="background-position: {{((vm.gameState.dealerCards[0].id - 1) * -73) -1}}px {{ ((vm.gameState.dealerCards[0].deck - 1) * -98) -1 }}px">
+                </div>
                 <div class="card blank"></div>
             </div>
             <div ng-show="vm.gameState.dealerTurn">
-                <div ng-repeat="card in vm.gameState.dealerCards"
-                     class="card card-{{ card.id }} card-deck-{{ card.deck }}"></div>
+                <div ng-repeat="card in vm.gameState.dealerCards" class="card"
+                     style="background-position: {{((card.id - 1) * -73) -1}}px {{ ((card.deck - 1) * -98) -1 }}px">
+                </div>
             </div>
         </div>
         <div id="playerContainer" class="boardRow">
@@ -30,8 +33,8 @@
                 {{ vm.gameState.playerPoints }}
             </div>
 
-            <div ng-repeat="card in vm.gameState.playerCards"
-                 class="card card-{{ card.id }} card-deck-{{ card.deck }}">
+            <div ng-repeat="card in vm.gameState.playerCards" class="card"
+                 style="background-position: {{((card.id - 1) * -73) -1}}px {{ ((card.deck - 1)* -98) -1 }}px">
             </div>
         </div>
         <div ng-if="!vm.gameState.gameIsEnded && !vm.gameState.isFirstGame">
