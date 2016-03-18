@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
     'use strict';
 
     angular
@@ -45,4 +45,4 @@
             storage.set('gamesHistory', history);
         }
     }
-})(angular);
+})();

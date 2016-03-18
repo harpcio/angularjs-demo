@@ -1,5 +1,5 @@
-(function (angular) {
-    "use strict";
+(function () {
+    'use strict';
 
     angular
         .module('AngularJsDemoApp', [
@@ -11,4 +11,4 @@
             debugMode: true
         });
 
-})(angular);
+})();

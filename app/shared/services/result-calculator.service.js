@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
     'use strict';
 
     angular
@@ -19,6 +19,16 @@
                 state.playerLost = true;
 
                 ScoresService.lose(state.playerPoints, state.dealerPoints);
+
+                return;
+            }
+
+            if (state.playerPoints === 21) {
+                state.dealerTurn = true;
+                state.gameIsEnded = true;
+                state.playerWon = true;
+
+                ScoresService.win(state.playerPoints, state.dealerPoints);
 
                 return;
             }
@@ -55,4 +65,4 @@
 
 
     }
-})(angular);
+})();

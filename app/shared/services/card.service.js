@@ -1,7 +1,8 @@
-(function (angular) {
+(function () {
     'use strict';
 
-    angular.module('AngularJsDemoApp')
+    angular
+        .module('AngularJsDemoApp')
         .service('CardService', CardService);
 
     CardService.$inject = [];
@@ -38,4 +39,4 @@
             return randomCard;
         }
     }
-})(angular);
+})();

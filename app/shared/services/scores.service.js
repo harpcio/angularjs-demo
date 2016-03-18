@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
     'use strict';
 
     angular
@@ -85,4 +85,4 @@
             storage.set('scoresState', state);
         }
     }
-})(angular);
+})();

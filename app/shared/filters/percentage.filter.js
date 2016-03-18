@@ -1,4 +1,4 @@
-(function (angular) {
+(function () {
     'use strict';
 
     angular
@@ -12,4 +12,4 @@
             return $filter('number')(input * 100, decimals) + '%';
         };
     }
-})(angular);
+})();

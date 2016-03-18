@@ -5,7 +5,7 @@
         .module('AngularJsDemoApp')
         .directive('gameStats', gameStats);
 
-    gameStats.$inject = ["ScoresService"];
+    gameStats.$inject = ['ScoresService'];
 
     function gameStats(ScoresService){
         return {
@@ -17,6 +17,6 @@
                 stats.scoresState = ScoresService.state;
             },
             controllerAs: 'stats'
-        }
+        };
     }
 })();

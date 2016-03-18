@@ -1,10 +1,17 @@
-(function (angular) {
+(function () {
     'use strict';
 
-    angular.module('AngularJsDemoApp')
+    angular
+        .module('AngularJsDemoApp')
         .service('GameService', GameService);
 
-    GameService.$inject = ['storage', 'CardService', 'PointsCalculatorService', 'ResultCalculatorService', 'ScoresService'];
+    GameService.$inject = [
+        'storage',
+        'CardService',
+        'PointsCalculatorService',
+        'ResultCalculatorService',
+        'ScoresService'
+    ];
 
     function GameService(storage, CardService, PointsCalculatorService, ResultCalculatorService, ScoresService) {
         var state = {
@@ -50,6 +57,7 @@
                 showCards();
             }
             state.isFirstGame = false;
+            ResultCalculatorService.calculate(state);
             _updateStorage();
         }
 
@@ -105,4 +113,4 @@
             storage.set('gameState', state);
         }
     }
-})(angular);
+})();

@@ -1,10 +1,13 @@
-(function (angular) {
-    "use strict";
+(function () {
+    'use strict';
 
-    var AngularJsDemoApp = angular.module('AngularJsDemoApp');
+    angular
+        .module('AngularJsDemoApp')
+        .config(config);
 
-    AngularJsDemoApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
+    function config($stateProvider, $urlRouterProvider) {
         // any unknown URLS go to 404
         $urlRouterProvider.otherwise('/404');
 
@@ -15,13 +18,12 @@
             .state('home', {
                 url: '/',
                 templateUrl: 'app/components/home/views/home.view.html',
-                controller: "HomeController",
+                controller: 'HomeController',
                 controllerAs: 'vm'
             })
             .state('404', {
                 url: '/404',
                 templateUrl: 'app/shared/views/404.html'
             });
-    }]);
-
-})(angular);
+    }
+})();

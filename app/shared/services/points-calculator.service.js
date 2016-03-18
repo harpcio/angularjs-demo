@@ -1,7 +1,8 @@
-(function (angular) {
+(function () {
     'use strict';
 
-    angular.module('AngularJsDemoApp')
+    angular
+        .module('AngularJsDemoApp')
         .service('PointsCalculatorService', PointsCalculatorService);
 
     PointsCalculatorService.$inject = [];
@@ -47,4 +48,4 @@
             return points;
         }
     }
-})(angular);
+})();

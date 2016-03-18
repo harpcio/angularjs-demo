@@ -1,10 +1,11 @@
-(function (angular) {
+(function () {
     'use strict';
 
-    angular.module('AngularJsDemoApp')
+    angular
+        .module('AngularJsDemoApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ["GameService", "GamesHistoryService"];
+    HomeController.$inject = ['GameService', 'GamesHistoryService'];
 
     function HomeController(GameService, GamesHistoryService) {
         var vm = this;
@@ -41,6 +42,6 @@
         vm.closeHistory = function () {
             vm.isHistoryShow = false;
             vm.gamesHistoryList = [];
-        }
+        };
     }
-})(angular);
+})();
