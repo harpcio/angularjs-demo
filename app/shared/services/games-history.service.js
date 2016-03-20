@@ -37,7 +37,7 @@
         }
 
         function reset() {
-            history = [];
+            history.length = 0;
             _updateStorage();
         }
 

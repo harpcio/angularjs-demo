@@ -1,22 +1,27 @@
-(function(){
+(function () {
     'use strict';
 
     angular
         .module('AngularJsDemoApp')
         .directive('gameStats', gameStats);
 
-    gameStats.$inject = ['ScoresService'];
-
-    function gameStats(ScoresService){
-        return {
-            restrict: 'E',
+    function gameStats() {
+        var directive = {
+            restrict: 'EA',
+            scope: {},
             templateUrl: 'app/shared/directives/game-stats/game-stats.view.html',
-            controller: function() {
-                var stats = this;
-
-                stats.scoresState = ScoresService.state;
-            },
-            controllerAs: 'stats'
+            controller: GameStatsController,
+            controllerAs: 'vm'
         };
+
+        return directive;
+    }
+
+    GameStatsController.$inject = ['ScoresService'];
+
+    function GameStatsController(ScoresService) {
+        var vm = this;
+
+        vm.scoresState = ScoresService.state;
     }
 })();

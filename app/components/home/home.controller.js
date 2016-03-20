@@ -5,11 +5,11 @@
         .module('AngularJsDemoApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['GameService', 'GamesHistoryService'];
+    HomeController.$inject = ['GameService'];
 
-    function HomeController(GameService, GamesHistoryService) {
+    function HomeController(GameService) {
         var vm = this;
-        vm.isHistoryShow = false;
+        vm.isShowHistory = false;
 
         vm.gameState = GameService.gameState;
 
@@ -35,13 +35,7 @@
         };
 
         vm.showHistory = function () {
-            vm.isHistoryShow = true;
-            vm.gamesHistoryList = GamesHistoryService.getList();
-        };
-
-        vm.closeHistory = function () {
-            vm.isHistoryShow = false;
-            vm.gamesHistoryList = [];
+            vm.isShowHistory = true;
         };
     }
 })();

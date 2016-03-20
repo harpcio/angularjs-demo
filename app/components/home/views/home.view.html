@@ -1,7 +1,7 @@
 <div class="page">
     <div class="header">
         <div id="stats">
-            <game-stats></game-stats>
+            <div game-stats></div>
             <a ng-click="vm.showHistory()">Show your scores...</a>
         </div>
 
@@ -17,25 +17,18 @@
                 </div>
             </div>
             <div ng-show="!vm.gameState.dealerTurn">
-                <div class="card"
-                     style="background-position: {{((vm.gameState.dealerCards[0].id - 1) * -73) -1}}px {{ ((vm.gameState.dealerCards[0].deck - 1) * -98) -1 }}px">
-                </div>
+                <div game-cards cards="[vm.gameState.dealerCards[0]]"></div>
                 <div class="card blank"></div>
             </div>
             <div ng-show="vm.gameState.dealerTurn">
-                <div ng-repeat="card in vm.gameState.dealerCards" class="card"
-                     style="background-position: {{((card.id - 1) * -73) -1}}px {{ ((card.deck - 1) * -98) -1 }}px">
-                </div>
+                <div game-cards cards="vm.gameState.dealerCards"></div>
             </div>
         </div>
         <div id="playerContainer" class="boardRow">
             <div id="playerScore" class="score">
                 {{ vm.gameState.playerPoints }}
             </div>
-
-            <div ng-repeat="card in vm.gameState.playerCards" class="card"
-                 style="background-position: {{((card.id - 1) * -73) -1}}px {{ ((card.deck - 1)* -98) -1 }}px">
-            </div>
+            <div game-cards cards="vm.gameState.playerCards"></div>
         </div>
         <div ng-if="!vm.gameState.gameIsEnded && !vm.gameState.isFirstGame">
             <div title="Deal a new card" class="twistbutton button">
@@ -66,41 +59,5 @@
     </div>
 </div>
 
-<div class="mainBar" ng-show="vm.isHistoryShow">
-    <div class="scoreHistory">
-        <a href="#" ng-click="vm.closeHistory()">close history</a>
+<div game-history is-show-history="vm.isShowHistory"></div>
 
-        <table>
-            <tbody>
-            <tr class="header">
-                <td>
-                    Game
-                </td>
-                <td>
-                    Player
-                </td>
-                <td>
-                    Dealer
-                </td>
-                <td>
-                    Result
-                </td>
-            </tr>
-            <tr ng-repeat="gameHistory in vm.gamesHistoryList">
-                <td>
-                    {{ gameHistory.game }}
-                </td>
-                <td>
-                    {{ gameHistory.player }}
-                </td>
-                <td>
-                    {{ gameHistory.dealer }}
-                </td>
-                <td>
-                    {{ gameHistory.result }}
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>

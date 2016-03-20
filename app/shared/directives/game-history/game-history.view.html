@@ -1,0 +1,37 @@
+<div class="mainBar" ng-show="vm.isShowHistory">
+    <div class="scoreHistory">
+        <a href="#" ng-click="vm.closeHistory()">close history</a>
+        <table>
+            <tbody>
+            <tr class="header">
+                <td>
+                    Game
+                </td>
+                <td>
+                    Player
+                </td>
+                <td>
+                    Dealer
+                </td>
+                <td>
+                    Result
+                </td>
+            </tr>
+            <tr ng-repeat="gameHistory in vm.gamesHistoryList">
+                <td>
+                    {{ gameHistory.game }}
+                </td>
+                <td>
+                    {{ gameHistory.player }}
+                </td>
+                <td>
+                    {{ gameHistory.dealer }}
+                </td>
+                <td>
+                    {{ gameHistory.result }}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

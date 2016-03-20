@@ -1,18 +1,18 @@
 <p>
     <label>Wins</label>
     <span>
-        {{ stats.scoresState.wins }} ({{ stats.scoresState.wins / stats.scoresState.games | percentage:1 }})
+        {{ vm.scoresState.wins }} ({{ vm.scoresState.wins / vm.scoresState.games | percentage:1 }})
     </span>
 </p>
 <p>
     <label>Draws</label>
     <span>
-        {{ stats.scoresState.draws }} ({{ stats.scoresState.draws / stats.scoresState.games | percentage:1 }})
+        {{ vm.scoresState.draws }} ({{ vm.scoresState.draws / vm.scoresState.games | percentage:1 }})
     </span>
 </p>
 <p>
     <label>Looses</label>
     <span>
-        {{ stats.scoresState.looses }} ({{ stats.scoresState.looses / stats.scoresState.games | percentage:1 }})
+        {{ vm.scoresState.looses }} ({{ vm.scoresState.looses / vm.scoresState.games | percentage:1 }})
     </span>
 </p>
